@@ -2101,6 +2101,12 @@ write_files:
           {{if .Experimental.Oidc.GroupsClaim}}
           - --oidc-groups-claim={{.Experimental.Oidc.GroupsClaim}}
           {{ end -}}
+          {{if .Experimental.Oidc.UsernamePrefix}}
+          - --oidc-username-prefix={{.Experimental.Oidc.UsernamePrefix}}
+          {{ end -}}
+          {{if .Experimental.Oidc.GroupsPrefix}}
+          - --oidc-groups-prefix={{.Experimental.Oidc.GroupsPrefix}}
+          {{ end -}}
           {{ end -}}
           - --cert-dir=/etc/kubernetes/ssl
           - --tls-cert-file=/etc/kubernetes/ssl/apiserver.pem
